@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Avatar</title>
+    <style>
+        canvas{
+            display: block;
+            margin: auto;
+        }
+
+        img{
+            display: none;
+        }   
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid grey"></canvas>
+    <img id="arana" src="arana.png" alt="arana">
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        
+        //cabello
+        ctx.fillStyle = "rgb(145, 100, 67)"
+        ctx.beginPath();
+        ctx.roundRect(185, 8, 130, 200, 75);
+        ctx.fill();
+        //sueter
+        ctx.strokeStyle = "rgb(170, 0, 0)";
+        ctx.lineWidth = 2;
+        ctx.fillStyle = "rgb(210, 0, 0)";
+        ctx.beginPath();
+        ctx.roundRect(160, 160, 180, 190, 60);
+        ctx.fill();
+        //brazos
+        //brazo 1
+        ctx.beginPath();
+        ctx.moveTo(190, 210);
+        ctx.lineTo(190, 341);
+        ctx.closePath();
+        ctx.stroke();
+        //brazo 2
+        ctx.beginPath();
+        ctx.moveTo(310, 210);
+        ctx.lineTo(310, 341);
+        ctx.closePath();
+        ctx.stroke();
+        //bolsa sueter
+        ctx.beginPath();
+        ctx.moveTo(220, 270);
+        ctx.lineTo(210, 315);
+        ctx.lineTo(290, 315);
+        ctx.lineTo(280, 270);
+        ctx.closePath();
+        ctx.stroke();
+        //gorra de sueter
+        ctx.beginPath();
+        ctx.ellipse(250, 162, 20, 48, Math.PI / 2, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.stroke();
+
+        //araña
+        const image = document.getElementById("arana");
+        ctx.drawImage(image, 220, 210);
+
+        //cordones
+        ctx.fillStyle = "rgb(170, 0, 0)";
+        ctx.beginPath();
+        ctx.roundRect(230, 170, 6, 30, 60)
+        ctx.roundRect(265, 170, 6, 35, 60)
+        ctx.fill();
+        //cuello
+        ctx.fillStyle = "rgb(245, 200, 130)";
+        ctx.fillRect(235, 138, 30, 20);
+        ctx.beginPath();
+        ctx.arc(250, 158, 15, 0, 2*Math.PI);
+        ctx.fill();
+        ctx.closePath();
+        //cabeza
+        ctx.fillStyle = "rgb(250, 221, 145)";
+        ctx.beginPath();
+        ctx.arc(250, 80, 60, 0, 2*Math.PI);
+        ctx.fill();
+        ctx.closePath();
+        //cara
+        //ceja 1
+        ctx.beginPath();
+        ctx.fillStyle = "rgb(160, 115, 78)"
+        ctx.roundRect(216, 54, 25, 7, 5)
+        ctx.fill();
+        //ceja 2
+        ctx.beginPath();
+        ctx.fillStyle = "rgb(160, 115, 78)"
+        ctx.roundRect(259, 54, 25, 7, 5)
+        ctx.fill();
+        //ojos 1
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.ellipse(230, 80, 6, 12, Math.PI, 0, 2 * Math.PI);
+        ctx.fill();
+        //iris 1
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.ellipse(232, 79, 3, 4, Math.PI, 0, 2 * Math.PI);
+        ctx.fill();
+        //ojo 2
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.ellipse(270, 80, 6, 12, Math.PI, 0, 2 * Math.PI);
+        ctx.fill();
+        //iris 2
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.ellipse(272, 79, 3, 4, Math.PI, 0, 2 * Math.PI);
+        ctx.fill();
+        //nariz
+        ctx.beginPath();
+        ctx.fillStyle = "rgb(245, 200, 130)";
+        ctx.roundRect(247, 92, 7, 15, 5)
+        ctx.fill();
+        //boca
+        ctx.beginPath();
+        ctx.fillStyle = "rgb(170, 50, 50)";
+        ctx.ellipse(250, 115, 20, 18, Math.PI / .1, 0, Math.PI);
+        ctx.fill();
+        //lengua
+        ctx.beginPath();
+        ctx.fillStyle = "rgb(235, 124, 155)";
+        ctx.ellipse(250, 129, 4, 12, Math.PI / 2, 0, 2 * Math.PI);
+        ctx.fill();
+        //dientes
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.roundRect(238, 115, 25, 4, 1)
+        ctx.fill();
+        //cabello fleco
+        ctx.fillStyle = "rgb(145, 100, 67)"
+        ctx.beginPath();
+        ctx.ellipse(215, 48, 15, 50, Math.PI * .25, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.ellipse(285, 50, 15, 55, Math.PI / .21, 0, 2 * Math.PI);
+        ctx.fill();
+
+    </script>
+</body>
+</html>
